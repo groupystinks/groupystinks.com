@@ -8,11 +8,14 @@ var MobileDetect = require('mobile-detect');
 var Colors = require('./ColorMe');
 var SpaceTravel = require('./SpaceTravel');
 var PureRender = require('./PureRender');
-var glassesWhite = require('../../images/rounded-white.png');
-var glassesBlack = require('../../images/rounded-black-64.png');
+var glassesWhite = require('../../assets/images/rounded-white.png');
+var glassesBlack = require('../../assets/images/rounded-black-64.png');
 
 var Link = Router.Link;
 
+/*
+ * TODO: add some animation for mobile
+*/
 
 @Radium
 @PureRender

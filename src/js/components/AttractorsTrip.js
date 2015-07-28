@@ -7,17 +7,9 @@
  * replace Hopalong Orbit Fractal with Three Ply Orbit Fractal
  */
 
-/*/ TODO: 1. Mobile friendly
-*
-*/
-
 (function() {
   function AttractorsTripNamespace() {
-    /**
-     *
-     *
-    */
-    let galaxyImg = require("../../images/galaxy.png");
+    let galaxyImg = require("../../assets/images/galaxy.png");
     let THREE = require('three');
 
 

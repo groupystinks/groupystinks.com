@@ -10,9 +10,6 @@ var asap = require('asap');
 var RouteHandler = Router.RouteHandler
 var Link = Router.Link;
 
-// template of subscription
-var dummySubscription = {remove() {}};
-
 
 @Radium
 @PureRender
@@ -21,7 +18,8 @@ class Root extends Component {
     isLoading: false,
   }
 
-  _subscriptions = [dummySubscription];
+  // template of subscription
+  _subscriptions = [{remove() {}}];
 
   componentDidMount() {
     this._subscriptions = [];

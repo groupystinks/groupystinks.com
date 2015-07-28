@@ -41,7 +41,7 @@
     "serve": "node server.js",
     "build": "webpack --config webpack.prod.config.js",
     "publish": "npm run build && cp src/index.html build/index.html && git checkout gh-pages && cp build/* . && git commit -am 'Code update' && git push origin gh-pages && git checkout master",
-    "clone": "npm run build && cp src/index.html build/index.html && cp build/* ../groupystinks.github.io",
+    "clone": "npm run build && cp src/index.html build/index.html && cp build/* ../groupystinks.github.io && cp src/assets/favicon.ico ../groupystinks.github.io",
     "start": "npm run watch-html & npm run watch-js & npm run serve",
     "lint": "eslint src/js/"
   },
