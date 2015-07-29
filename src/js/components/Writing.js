@@ -1,13 +1,10 @@
-var {Component, PropsType} = require('react');
+var {Component} = require('react');
 var React = require('react/addons');
 var PureRender = require('./PureRender');
 var Colors = require('./ColorMe')
 var Hr = require('./Hr');
-var ClientID = require('./ClientID');
-var Hr = require('./Hr');
 var API = require('./API');
 var Radium = require('radium');
-var RSVP = require('rsvp');
 var asap = require('asap');
 
 
@@ -71,7 +68,7 @@ class Novels extends Component {
           <div></div>
         </a>
       </section>
-    )
+    );
   }
 }
 

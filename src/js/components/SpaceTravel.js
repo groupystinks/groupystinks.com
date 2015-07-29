@@ -1,7 +1,5 @@
 var _ = require('lodash');
-var {Component, PropTypes} = require('react');
-var React = require('react/addons');
-
+var {Component} = require('react');
 var PureRender = require('./PureRender');
 var AttractorsTrip = require('./AttractorsTrip');
 

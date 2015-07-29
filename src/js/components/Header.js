@@ -1,4 +1,4 @@
-var {Component, PropTypes} = require('react');
+var {Component} = require('react');
 var React = require('react/addons');
 var Router = require('react-router');
 var Colors = require('./ColorMe');
@@ -13,7 +13,11 @@ var Link = Router.Link;
 class Header extends Component {
 
   render() {
-    var headers = ['Home', 'About', 'Writing'];
+    var headers = [
+      {label: 'Home', route:''},
+      {label: 'About', route:'about'},
+      {label: 'Writing', route:'writing'}
+    ];
     return (
       <header>
         <nav>
@@ -21,10 +25,11 @@ class Header extends Component {
             {headers.map(item =>
               <NavItem
                 isSelected={
-                  ((_.last(this.props.path.split('/')) || 'home') === item.toLowerCase())
+                  ((_.last(this.props.path.split('/')) || 'home') === item.label.toLowerCase())
                 }
-                key={item}
-                label={item}
+                key={item.label}
+                route={item.route}
+                label={item.label}
               />
             )}
           </ul>
@@ -42,7 +47,7 @@ class NavItem extends Component {
     return (
       <li>
         <Link
-          to={'/'+ this.props.label.toLowerCase()}>
+          to={'/'+ this.props.route.toLowerCase()}>
           <span
             style={[
               styles.listItem.link,

@@ -12,9 +12,6 @@
     let galaxyImg = require("../../assets/images/galaxy.png");
     let THREE = require('three');
 
-
-    let VISUALS_VISIBLE = true;
-
     let SCALE_FACTOR = 1000;
     let CAMERA_BOUND = 200;
 
@@ -36,8 +33,6 @@
     let C_MAX = 17;
     let D_MIN = 0;
     let D_MAX = 10;
-    let E_MIN = 0;
-    let E_MAX = 12;
 
     // requestAnimationFrame ID & setInterval ID
     let spaceTripId, intervalId
@@ -130,7 +125,7 @@
     function animate() {
       spaceTripId = requestAnimationFrame(animate);
 
-      if (!!_.last(window.location.href.split('/'))) {
+      if (!(window.location.hash==='#/')) {
         // stop update orbit
         clearInterval(intervalId);
 
@@ -205,7 +200,6 @@
       let dl = d;
       let subsets = orbit.subsets;
       let num_points_subset_l = NUM_POINTS_SUBSET;
-      let num_points_l = NUM_POINTS;
       let scale_factor_l = SCALE_FACTOR;
 
       let xMin = 0, xMax = 0, yMin = 0, yMax = 0;

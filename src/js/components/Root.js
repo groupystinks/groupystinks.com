@@ -1,14 +1,15 @@
-var {Component, PropTypes} = require('react');
+var {Component} = require('react');
 var React = require('react/addons');
 var Radium = require('radium');
-var PureRender = require('./PureRender');
 var Router = require('react-router');
 var Header = require('./Header');
+var PureRender = require('./PureRender');
+var LoadingSprint = require('./LoadingSprint');
 var API = require('./API');
 var asap = require('asap');
 
 var RouteHandler = Router.RouteHandler
-var Link = Router.Link;
+
 
 
 @Radium
@@ -41,6 +42,7 @@ class Root extends Component {
   render(): any {
     return (
       <div>
+        {this.state.isLoading ? <LoadingSprint /> : null}
         <Header
           path={this.props.path}
         />

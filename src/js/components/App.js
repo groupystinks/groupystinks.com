@@ -23,7 +23,7 @@ class Index extends Component {
 
   static willTransitionTo = (transition) => {
     $('canvas').parent().remove();
-  }
+  };
 
   render(): any {
     var deviceDetect = new MobileDetect(window.navigator.userAgent);

@@ -1,4 +1,4 @@
-var {Component, PropTypes} = require('react');
+var {Component} = require('react');
 var React = require('react/addons');
 var PureRender = require('./PureRender');
 var Radium = require('radium');
