@@ -34,7 +34,7 @@ class Writing extends Component {
           <h3 style={styles.sectionTag}>Novels</h3>
           <Hr/>
         </div>
-        <div style={styles.novelContainer}>
+        <div style={styles.inlineSectionContainer}>
           {Object.keys(novelsByName).length ? (
             _.values(novelsByName).map(novel =>
             <Novels
@@ -45,6 +45,18 @@ class Writing extends Component {
         <div style={styles.hrContainer}>
           <h3 style={styles.sectionTag}>Blogs</h3>
           <Hr/>
+        </div>
+        <div style={styles.inlineSectionContainer}>
+          <section style={styles.inline.section} >
+            <a
+              target="_blank"
+              style={styles.inline.link}
+              href='https://medium.com/@groupystinks'
+            >
+              <div style={styles.inline.name}>Medium</div>
+              <div></div>
+            </a>
+          </section>
         </div>
       </div>
     );
@@ -58,13 +70,13 @@ class Novels extends Component {
   render() {
     var linkBaseURL = 'http://groupystinks.github.io/skrik-view/#/thread/';
     return (
-      <section style={styles.novels.section} >
+      <section style={styles.inline.section} >
         <a
           target="_blank"
-          style={styles.novels.link}
+          style={styles.inline.link}
           href={encodeURI(linkBaseURL + this.props.name)}
         >
-          <div style={styles.novels.name}>{this.props.name}</div>
+          <div style={styles.inline.name}>{this.props.name}</div>
           <div></div>
         </a>
       </section>
@@ -91,14 +103,14 @@ var styles = {
     padding: '30px',
   },
 
-  novelContainer: {
+  inlineSectionContainer: {
     display: 'flex',
     justifyContent: 'center',
     alignContent: 'center',
     flexFlow: 'row wrap',
   },
 
-  novels: {
+  inline: {
     section: {
       display: 'flex',
       width: '300px',

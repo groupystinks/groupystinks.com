@@ -69,6 +69,13 @@ class About extends Component {
             />
           )}
         </div>
+        <div style={styles.profileContainer.emailContainer}>
+          <Hr/>
+          <section style={styles.profileContainer.lowerChild}>
+            <h2>Hello There!</h2>
+            <a style={styles.profileContainer.social} href="mailto:jason0911520@gmail.com">jason0911520@gmail.com</a>
+          </section>
+        </div>
       </div>
     );
   }
@@ -149,6 +156,12 @@ var styles = {
         textDecoration: 'underline',
       }
     },
+
+    emailContainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      margin: '0 auto',
+    }
   },
 
   projectContainer: {
@@ -156,6 +169,7 @@ var styles = {
     justifyContent: 'center',
     alignContent: 'center',
     flexFlow: 'row wrap',
+    padding: '0 30px 30px 30px',
   },
 
   projects: {
