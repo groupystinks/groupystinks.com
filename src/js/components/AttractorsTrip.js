@@ -9,36 +9,35 @@
 
 (function() {
   function AttractorsTripNamespace() {
-    let galaxyImg = require("../../assets/images/galaxy.png");
-    let THREE = require('three');
+    var galaxyImg = require("../../assets/images/galaxy.png");
+    var THREE = require('three');
 
-    let SCALE_FACTOR = 1000;
-    let CAMERA_BOUND = 200;
+    var SCALE_FACTOR = 1000;
+    var CAMERA_BOUND = 200;
 
-    let NUM_POINTS_SUBSET = 20000;
-    let NUM_SUBSETS       = 7;
-    let NUM_POINTS = NUM_POINTS_SUBSET * NUM_SUBSETS;
+    var NUM_POINTS_SUBSET = 20000;
+    var NUM_SUBSETS       = 7;
 
-    let NUM_LEVELS = 5;
-    let LEVEL_DEPTH = 400;
+    var NUM_LEVELS = 5;
+    var LEVEL_DEPTH = 400;
 
-    let TIMELESS_YELLOW_GREENISH = '#345612';
+    var TIMELESS_YELLOW_GREENISH = '#345612';
 
     // Orbit parameters constraints
-    let A_MIN = -30;
-    let A_MAX = 30;
-    let B_MIN = .2;
-    let B_MAX = 1.8;
-    let C_MIN = 5;
-    let C_MAX = 17;
-    let D_MIN = 0;
-    let D_MAX = 10;
+    var A_MIN = -30;
+    var A_MAX = 30;
+    var B_MIN = .2;
+    var B_MAX = 1.8;
+    var C_MIN = 5;
+    var C_MAX = 17;
+    var D_MIN = 0;
+    var D_MAX = 10;
 
     // requestAnimationFrame ID & setInterval ID
-    let spaceTripId, intervalId
+    var spaceTripId, intervalId
 
     // Orbit parameters
-    let a, b, c, d;
+    var a, b, c, d;
 
     // Orbiut data
     let orbit = {
@@ -63,17 +62,17 @@
       orbit.subsets.push(subsetPoints);
     }
 
-    let container, camera, scene, renderer;
+    var container, camera, scene, renderer;
 
-    let mouseX = 0, mouseY = 0;
+    var mouseX = 0, mouseY = 0;
 
-    let windowHalfX = window.innerWidth / 2;
-    let windowHalfY = window.innerHeight / 2;
+    var windowHalfX = window.innerWidth / 2;
+    var windowHalfY = window.innerHeight / 2;
 
-    let speed = .4;
-    let rotationSpeed = 0;
+    var speed = .4;
+    var rotationSpeed = 0;
 
-    let galaxy = THREE.ImageUtils.loadTexture(galaxyImg);
+    var galaxy = THREE.ImageUtils.loadTexture(galaxyImg);
 
     function init() {
       container = document.createElement( 'div' );
@@ -188,21 +187,21 @@
     }
 
     function generateOrbit(){
-      let x, y, z, x1;
-      let idx = 0;
+      var x, y, z, x1;
+      var idx = 0;
 
       prepareOrbit();
 
       // Using local vars should be faster
-      let al = a;
-      let bl = b;
-      let cl = c;
-      let dl = d;
-      let subsets = orbit.subsets;
-      let num_points_subset_l = NUM_POINTS_SUBSET;
-      let scale_factor_l = SCALE_FACTOR;
+      var al = a;
+      var bl = b;
+      var cl = c;
+      var dl = d;
+      var subsets = orbit.subsets;
+      var num_points_subset_l = NUM_POINTS_SUBSET;
+      var scale_factor_l = SCALE_FACTOR;
 
-      let xMin = 0, xMax = 0, yMin = 0, yMax = 0;
+      var xMin = 0, xMax = 0, yMin = 0, yMax = 0;
 
       for (let s = 0; s < NUM_SUBSETS; s++){
 
@@ -240,8 +239,8 @@
         }
       }
 
-      let scaleX = 2 * scale_factor_l / (xMax - xMin);
-      let scaleY = 2 * scale_factor_l / (yMax - yMin);
+      var scaleX = 2 * scale_factor_l / (xMax - xMin);
+      var scaleY = 2 * scale_factor_l / (yMax - yMin);
 
       orbit.xMin = xMin;
       orbit.xMax = xMax;
